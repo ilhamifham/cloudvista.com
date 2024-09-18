@@ -225,6 +225,20 @@ picture {
   list-style-type: none;
 }
 
+.banner .list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentinfo_menu .list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
 .card_list {
   padding: 1rem 1rem 1rem 2rem;
 }
@@ -442,8 +456,7 @@ picture {
 .contentinfo_menu {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 .banner_button,
@@ -453,20 +466,9 @@ picture {
   padding: 0.469rem;
 }
 
-.banner_list,
-.contentinfo_menu_list {
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
-}
-
 .banner_list_item a,
 .contentinfo_menu_list a {
   display: block;
-  margin: 1rem 0 2rem 0;
   transition: 0.5s;
   font-weight: 500;
   color: var(--navColor);
@@ -475,14 +477,6 @@ picture {
 
 .banner_list_item a {
   font-size: 1.125rem;
-}
-
-.banner_list_item:last-child a {
-  margin-bottom: 0.5rem;
-}
-
-.contentinfo_menu_list_item:last-child a {
-  margin-bottom: 0.75rem;
 }
 
 .banner_list_item a:hover,
@@ -538,6 +532,14 @@ picture {
 
 }
 
+@media screen and (min-width: 768px) {
+  .banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 /* Page Blocks */
 
 .page_header {
@@ -556,7 +558,13 @@ picture {
 }
 
 .page_body {
-  margin-top: 4.43rem;
+  margin-top: 6.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .page_body {
+    margin-top: 4.5rem;
+  }
 }
 
 /* Sub Page Blocks */
@@ -579,7 +587,8 @@ picture {
   flex-direction: row;
   align-items: center;
   width: auto;
-  margin-right: 1.25rem;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 .banner_logo img {
@@ -618,6 +627,12 @@ picture {
     max-width: 700px;
   }
 
+}
+
+@media screen and (min-width: 768px) {
+  .banner_logo {
+    margin-bottom: 0;
+  }
 }
 
 /* Main - Hero Block */
